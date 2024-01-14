@@ -23,8 +23,12 @@ def recursive_copy(source, output):
 def main():
     args = parse_argv()
     print(args)
-    recursive_copy(args.source, args.output)
-    print("Done")
+    try:
+        recursive_copy(args.source, args.output)
+    except:
+        print("Something went wrong")
+    else:
+        print("Done")
 
 
 
