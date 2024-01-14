@@ -1,0 +1,29 @@
+import turtle
+
+size = 300
+#n = 2
+def koch_curve(size, n):
+    if n == 0:
+        turtle.forward(size)
+    else:
+        koch_curve(size/3, n-1)
+        turtle.left(60)
+        koch_curve(size/3, n-1)
+        turtle.right(120)
+        koch_curve(size/3, n-1)
+        turtle.left(60)
+        koch_curve(size/3, n-1)
+    
+
+def koch_snowflake(size, n):
+    for i in range(3):
+        turtle.right(120)
+        koch_curve(size, n)
+   
+
+n = turtle.numinput("Drawing koch snowflake", "Please enter the number of iterations: ", minval = 0)
+koch_snowflake(size, n)
+turtle.done()
+
+
+
